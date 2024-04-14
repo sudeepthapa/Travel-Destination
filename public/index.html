@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudip Thapa - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    :root {
+        --primary-color: #d9832e;
+        --bg-color-accent: #eaedf2;
+        --text-color-dark: #090a0c;
+        --text-color-light: #555a64;
+        --white: #ffffff;
+        --padding-16: 16px;
+        --padding-border: 100px;
+        --padding-32: 32px;
+        --padding-8: 8px;
+        --border-radius: 2px;
+    }
+
+    *,
+    html {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        color: var(--text-color-light);
+    }
+
+    /* Common Styles */
+
+    .wrapper {
+        padding: 40px var(--padding-border);
+    }
+
+    .primary-button {
+        padding: var(--padding-8) var(--padding-16);
+        border: 2px solid var(--primary-color);
+        background-color: var(--primary-color);
+        color: var(--white);
+        font-weight: 500;
+        border-radius: var(--border-radius);
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.2s ease-in;
+
+    }
+
+    .primary-button-outline {
+        padding: var(--padding-8) var(--padding-16);
+        border: 2px solid var(--primary-color);
+        background-color: var(--white);
+        color: var(--text-color-dark);
+        font-weight: 500;
+        border-radius: var(--border-radius);
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.2s ease-in;
+
+    }
+
+    .primary-button-outline:hover {
+        background-color: var(--primary-color);
+        color: var(--white);
+    }
+
+    .primary-button:hover {
+        background-color: var(--white);
+        color: var(--text-color-dark);
+    }
+
+    .section-title {
+        font-size: 32px;
+        color: var(--text-color-dark);
+        text-align: center;
+        padding: var(--padding-8) 0;
+    }
+
+    .section-title-underline {
+        width: 100px;
+        height: 3px;
+        background-color: var(--primary-color);
+        margin: auto;
+        margin-bottom: 50px;
+    }
+
+    /* Navigation Bar Styles */
+
+    #navs {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #navs-container a {
+        text-decoration: none;
+        margin-right: 32px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--text-color-dark);
+    }
+
+    #navs .icon {
+        display: none;
+    }
+
+    #navs-container a:hover,
+    #navs-container a:active {
+        color: var(--primary-color);
+        border-bottom: 2px solid var(--primary-color);
+        transition: all 0.2s ease-in;
+        border-width: 100%;
+    }
+
+
+
+    /* Hero Section Styles */
+    #hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "hero-content hero-image";
+        height: 80vh;
+    }
+
+    #hero-content {
+        grid-area: hero-content;
+        align-self: center;
+    }
+
+    #hero.wrapper {
+        padding: 0px var(--padding-border);
+    }
+
+    #hero-image {
+        grid-area: hero-image;
+    }
+
+    #hero-image img {
+        width: 100%;
+        height: 100%;
+    }
+
+    #hero-content h2 {
+        padding: var(--padding-16) 0;
+        font-size: 42px;
+        color: var(--text-color-dark);
+    }
+
+    #hero-content .greeting {
+        font-size: 18px;
+        font-weight: 500;
+        color: var(--text-color-dark);
+    }
+
+    #hero-content h4 {
+        margin-bottom: 16px;
+        font-size: 24px;
+        font-weight: 500;
+        color: var(--text-color-dark);
+    }
+
+    #hero-content .action-buttons {
+        margin-top: 32px;
+    }
+
+    .subtitle {
+        margin-bottom: 16px;
+        font-size: 24px;
+        font-weight: 500;
+        color: var(--text-color-dark);
+    }
+
+
+    /* About Me Styles */
+
+    #about-me {
+        background: var(--bg-color-accent);
+    }
+
+    #about-me-wrapper {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 16px;
+        grid-template-areas:
+            "about-me-content about-me-feature-1 about-me-feature-2"
+            "about-me-content about-me-feature-3 about-me-feature-4";
+    }
+
+    #about-me-content {
+        grid-area: about-me-content;
+        text-align: justify;
+        padding-right: var(--padding-16);
+    }
+
+    #about-me-feature-1 {
+        grid-area: about-me-feature-1;
+    }
+
+    #about-me-feature-2 {
+        grid-area: about-me-feature-2;
+        position: relative;
+        top: -20px;
+        background-color: var(--primary-color);
+    }
+
+    #about-me-feature-3 {
+        grid-area: about-me-feature-3;
+    }
+
+    #about-me-feature-4 {
+        grid-area: about-me-feature-4;
+        position: relative;
+        top: -20px;
+        background-color: var(--primary-color);
+    }
+
+    #about-me-feature-2 h6,
+    #about-me-feature-4 h6,
+    #about-me-feature-2 p,
+    #about-me-feature-4 p {
+        color: rgb(240, 240, 240) !important;
+        ;
+    }
+
+    .about-me-card {
+        display: inline-block;
+        padding: var(--padding-16);
+        border: 3px solid var(--primary-color);
+    }
+
+    .about-me-card img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .about-me-card h6 {
+        font-size: 16px;
+        font-weight: 600;
+        margin-left: 8px;
+    }
+
+    .about-me-card .about-me-card-header {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Skills Section Styles */
+    #skills p {
+        margin-bottom: 10px;
+        text-align: justify;
+    }
+
+    #skills-wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    #skills-wrapper .content {
+        flex: 1;
+    }
+
+    #skills-wrapper .skills-image {
+        flex: 1
+    }
+
+    .skills-image img {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Projects Section Styles */
+
+    #projects {
+        background-color: var(--bg-color-accent);
+    }
+
+    #projects img {
+        width: 100%;
+        height: 100%;
+    }
+
+    #projects .project {
+        display: flex;
+        align-items: center;
+        margin-bottom: 24px;
+    }
+
+    .project .content {
+        flex: 1;
+        text-align: justify;
+    }
+
+    .project .project-image {
+        flex: 1;
+        border-radius: 24px;
+        overflow: hidden;
+    }
+
+    .project .content {
+        margin-right: 24px;
+
+    }
+
+    .reverse-layout .content {
+        margin-left: 24px;
+    }
+
+    /* Experiences and Education Section Common Styles */
+    .logo {
+        width: 150px;
+        min-width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 4px solid var(--bg-color-accent);
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 16px;
+    }
+
+    .logo img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .company-title {
+        font-size: 22px;
+    }
+
+    .timeline {
+        font-size: 14px;
+        font-style: italic;
+    }
+
+    .right-content {
+        text-align: right;
+        width: 30%;
+    }
+
+    .left-content {
+        display: flex;
+        align-items: center;
+    }
+
+
+    /* Experiences Section Styles */
+    .experience {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 32px;
+    }
+
+    .chips {
+        display: flex;
+        flex-wrap: wrap;
+        width: 70%;
+        margin-top: 8px;
+    }
+
+    .chip {
+        border: 1px solid var(--bg-color-accent);
+        text-align: center;
+        padding: 4px 12px;
+        border-radius: 8px;
+        margin: 5px;
+    }
+
+    /* Education Section Styles */
+
+    #educations {
+        background-color: var(--bg-color-accent);
+
+    }
+
+    #education-wrapper {
+        display: flex;
+    }
+
+    #education-image {
+        position: relative;
+        width: 55%;
+        height: 400px;
+        display: table-cell;
+        vertical-align: middle;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    #education-image:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("images/education.jpeg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        transform-origin: 100% 0;
+        transform: skew(160deg);
+        z-index: -1;
+    }
+
+    .education {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 24px;
+    }
+
+    /* Blogs Section Styles */
+
+    /* Blogs Section */
+
+    #blog-articles {
+        display: grid;
+        gap: 1em;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: "blog-article-1 blog-article-2 blog-article-3 blog-article-4";
+    }
+
+    #blog-article-1 {
+        grid-row: blog-article-1;
+    }
+
+    #blog-article-2 {
+        grid-row: blog-article-2;
+    }
+
+    #blog-article-3 {
+        grid-row: blog-article-3;
+    }
+
+    #blog-article-4 {
+        grid-row: blog-article-4;
+    }
+
+
+    .blog-image {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+    }
+
+    .blog-image img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .blog-content {
+        padding: var(--padding-16);
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        background-color: var(--white);
+    }
+
+    .blog-content h6 {
+        font-size: 18px;
+        margin-top: 10px;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: var(--text-color-dark);
+    }
+
+    .blog-content .description {
+        font-size: 14px;
+        margin-bottom: 10px;
+
+    }
+
+    .blog-content a,
+    .project a {
+        color: var(--primary-color);
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: none;
+        border-bottom: 2px solid var(--primary-color);
+    }
+
+    .blog-content p,
+    .project p {
+        margin-bottom: 8px;
+    }
+
+    /* Contact Section */
+
+    #contacts {
+        background-color: var(--bg-color-accent);
+    }
+
+    .contact-form {
+        background-color: var(--white);
+        padding: var(--padding-32);
+    }
+
+    .form-fields {
+        margin-top: 18px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        grid-template-areas:
+            "form-firstName form-lastName"
+            "form-subject form-email"
+            "form-message form-message";
+    }
+
+    .form-fields input {
+        height: 35px;
+        padding: 0 var(--padding-8);
+    }
+
+    #form-firstName {
+        grid-area: form-firstName;
+    }
+
+    #form-lastName {
+        grid-area: form-lastName;
+    }
+
+    #form-subject {
+        grid-area: form-subject;
+    }
+
+    #form-email {
+        grid-area: form-email;
+    }
+
+    #form-message {
+        grid-area: form-message;
+    }
+
+    .contact-form textarea {
+        padding: var(--padding-8);
+    }
+
+    .contact-form .button {
+        margin-top: 16px;
+    }
+
+
+    /* Footer */
+
+    #footer {
+        background-color: var(--text-color-light);
+    }
+
+    #footer a {
+        text-decoration: none;
+        color: var(--white);
+    }
+
+    #footer p {
+        color: var(--white);
+    }
+
+    #footer .socials,
+    #footer .terms-policy,
+    #footer .copyrights {
+        text-align: center;
+        color: var(--white);
+    }
+
+    #footer img {
+        width: 30px;
+        height: 30px;
+        margin-right: 20px;
+        margin-bottom: 10px;
+    }
+
+    #footer .terms-policy,
+    #footer .terms-policy a {
+        color: #c6c6c6;
+    }
+
+    #footer .terms-policy a:hover {
+        color: #ffffff;
+    }
+
+
+    /* Styles for Responsiveness */
+
+    @media screen and (max-width: 1100px) and (min-width: 768px) {
+        #blog-articles {
+            grid-template-columns: auto;
+            grid-template-rows: auto;
+            grid-template-areas:
+                "blog-article-1 blog-article-2" "blog-article-3 blog-article-4";
+        }
+
+        #about-me-wrapper {
+            grid-template-columns: auto;
+            grid-template-areas:
+                "about-me-content about-me-content"
+                "about-me-feature-1 about-me-feature-2"
+                "about-me-feature-3 about-me-feature-4";
+        }
+
+        #hero.wrapper,
+        .wrapper {
+            padding: 40px 28px;
+        }
+
+        #navs-container a {
+            margin-right: 16px;
+        }
+    }
+
+
+    @media screen and (max-width: 768px) {
+
+        #navs a {
+            display: none;
+        }
+
+        #navs a.icon {
+            float: right;
+            display: block;
+            font-size: 28px;
+        }
+
+        #navs.responsive {
+            position: relative;
+        }
+
+        #navs.responsive .icon {
+            position: absolute;
+            right: 24px;
+            top: 30px;
+        }
+
+        #navs.responsive {
+            background-color: var(--bg-color-accent);
+        }
+
+        #navs.responsive a {
+            display: block;
+            text-align: left;
+            margin: 10px 0px;
+        }
+
+        #navs.responsive button {
+            display: none;
+        }
+
+        #navs-container {
+            margin-top: 40px;
+
+        }
+
+        #hero.wrapper,
+        .wrapper {
+            padding: 40px 24px;
+        }
+
+        #hero {
+            grid-template-rows: auto 1fr;
+            grid-template-columns: none;
+            height: 100%;
+            text-align: center;
+            grid-template-areas: "hero-image" "hero-content";
+        }
+
+        #hero-image img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #about-me-wrapper {
+            grid-template-columns: auto;
+            grid-template-areas:
+                "about-me-content about-me-content"
+                "about-me-feature-1 about-me-feature-2"
+                "about-me-feature-3 about-me-feature-4";
+        }
+
+        #about-me-feature-2,
+        #about-me-feature-4 {
+            top: 0px;
+        }
+
+        #about-me-content {
+            padding-right: 0px;
+        }
+
+        #skills-wrapper {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #projects .project {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .project .content {
+            margin-right: 0px;
+            margin-bottom: 24px;
+        }
+
+        .reverse-layout .content {
+            margin-left: 0px;
+        }
+
+        #projects .project.reverse-layout {
+            flex-direction: column;
+        }
+
+        .education,
+        .experience {
+            flex-direction: column;
+        }
+
+        .left-content {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .right-content {
+            text-align: center;
+            width: 100%;
+        }
+
+        .chips {
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #education-wrapper {
+            flex-direction: column;
+        }
+
+        #education-image {
+            width: 100%;
+            margin-bottom: 24px;
+            height: 200px;
+
+        }
+
+        #education-image:after {
+            transform: none;
+        }
+
+        #blog-articles {
+            grid-template-columns: auto;
+            grid-template-rows: auto;
+            grid-template-areas:
+                "blog-article-1 blog-article-2" "blog-article-3 blog-article-4";
+        }
+
+        .form-fields {
+            grid-template-columns: auto;
+            grid-template-areas:
+                "form-firstName" "form-lastName"
+                "form-subject" "form-email"
+                "form-message" "form-message";
+        }
+
+        #education-details {
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+
+        #about-me-wrapper {
+            grid-template-columns: auto;
+            grid-template-areas:
+                "about-me-content" "about-me-feature-1" "about-me-feature-2"
+                "about-me-feature-3" "about-me-feature-4";
+        }
+
+        #blog-articles {
+            grid-template-columns: auto;
+            grid-template-rows: auto;
+            grid-template-areas:
+                "blog-article-1" "blog-article-2" "blog-article-3" "blog-article-4";
+        }
+
+        #education-details {
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+    }
+</style>
+
+<body>
+    <!-- Navigation Section Start-->
+    <nav id="navs" class="wrapper">
+        <div id="navs-container">
+            <a href="#hero">Home</a>
+            <a href="#about-me">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#experiences">Experience</a>
+            <a href="#educations">Education</a>
+            <a href="#blogs">Blogs</a>
+        </div>
+        <div class="action-button">
+            <a href="#contacts"><button class="primary-button">Contact Me</button></a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </nav>
+    <!-- Navigation Section End-->
+
+    <!-- Hero Banner Section Start-->
+    <main id="hero" class="wrapper">
+        <div id="hero-content">
+            <p class="greeting">Hey there...</p>
+            <h2>Sudip Thapa</h2>
+            <h4>Full Stack Developer</h4>
+            <p>
+                I'm an Innovative Full Stack Developer and proficient in crafting dynamic web and mobile applications.
+                Specializing in React, Angular, Node, Laravel, React Native, and Flutter, I bring your ideas to life.
+                With a knack for problem-solving and innovation, I navigate the complexities of cloud services such as
+                AWS and GCP. Let's build something extraordinary together – whether you're a startup or an established
+                business, your success is my priority. Ready to embark on a journey of digital excellence? Let's turn
+                your ideas into reality and make your online presence shine! 🌐✨
+            </p>
+
+            <div class="action-buttons">
+                <a href="#skills"><button class="primary-button margin-right-8">Hire Me</button></a>
+                <a href="#contacts"> <button class="primary-button-outline">Lets Chat</button></a>
+            </div>
+        </div>
+        <div id="hero-image">
+            <img src="images/avatar2.png" alt="Hero Image">
+        </div>
+    </main>
+    <!-- Hero Banner Section End-->
+
+    <!-- About Me Section Start-->
+    <section id="about-me" class="wrapper">
+        <h2 class="section-title">About Me</h2>
+        <div class="section-title-underline"></div>
+        <div id="about-me-wrapper">
+            <div id="about-me-content">
+                <h4 class="subtitle">Dynamic Full Stack Developer</h4>
+                <p>
+                    I am a professional full stack developer with a passion for pushing the boundaries of what
+                    technology
+                    can achieve. Specialized in JavaScript and its frameworks, I bring a wealth of expertise to the
+                    table,
+                    crafting seamless and interactive user experiences. My skills extend beyond the browser, as I am a
+                    mobile application enthusiast, adept at developing for both Android and iOS platforms.
+                    In the vast landscape of cloud computing, I navigate effortlessly through AWS and Google Cloud,
+                    ensuring
+                    scalable and secure solutions for every project. With a commitment to excellence and a blend of
+                    creativity and code, I approach each endeavor as an opportunity to innovate and elevate digital
+                    experiences to new heights.
+                </p>
+            </div>
+
+            <div id="about-me-feature-1" class="about-me-card">
+                <div class="about-me-card-header">
+                    <img src="images/eye.png" alt="Eye Image" />
+                    <h6>Eye Catching</h6>
+                </div>
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+            </div>
+            <div id="about-me-feature-2" class="about-me-card">
+                <div class="about-me-card-header">
+                    <img src="images/responsive.png" alt="Eye Image" />
+                    <h6>Responsive</h6>
+                </div>
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+            </div>
+            <div id="about-me-feature-3" class="about-me-card">
+                <div class="about-me-card-header">
+                    <img src="images/dynamic.png" alt="Eye Image" />
+                    <h6>Dynamic Website</h6>
+                </div>
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+            </div>
+            <div id="about-me-feature-4" class="about-me-card">
+                <div class="about-me-card-header">
+                    <img src="images/seo.png" alt="Eye Image" />
+                    <h6>SEO Optimized</h6>
+                </div>
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+            </div>
+        </div>
+    </section>
+    <!-- About Me Section End-->
+
+    <!-- Skills Section Start -->
+    <section id="skills" class="wrapper">
+        <h2 class="section-title">Skills</h2>
+        <div class="section-title-underline"></div>
+
+        <div id="skills-wrapper">
+            <div class="content">
+                <h4 class="subtitle">Skills I Possess</h4>
+                <p>
+                    <strong>JavaScript Mastery:</strong> Proficient in harnessing the power of JavaScript, I navigate
+                    its complexities with finesse, using it as a versatile tool to build dynamic and interactive web
+                    applications.
+                </p>
+                <p>
+                    <strong>Mobile Application Expertise:</strong> With a keen focus on mobile development, I excel in
+                    creating engaging and responsive applications for both Android and iOS platforms, ensuring a
+                    seamless user experience.
+                </p>
+                <p>
+                    <strong>Cloud Computing Acumen:</strong> Adept at leveraging the capabilities of Amazon Web Services
+                    (AWS) and Google Cloud, I design scalable and secure cloud solutions that optimize performance and
+                    elevate the functionality of applications.
+                </p>
+                <p>
+                    <strong>Project Management:</strong> Adept at leveraging the capabilities of Amazon Web Services
+                    (AWS) and Google Cloud, I design scalable and secure cloud solutions that optimize performance and
+                    elevate the functionality of applications.
+                </p>
+            </div>
+            <div class="skills-image">
+                <img src="images/programming_languages.png" alt="Skills Images" />
+            </div>
+        </div>
+    </section>
+    <!-- Skills Section End -->
+
+    <!-- Projects Section Start -->
+    <section id="projects" class="wrapper">
+        <h2 class="section-title">Recent Projects</h2>
+        <div class="section-title-underline"></div>
+        <div class="project">
+            <div class="content">
+                <h4 class="subtitle">Personal Website</h4>
+                <p>
+                    A personal website is a dynamic digital resume and portfolio, offering a visually appealing showcase
+                    of skills and accomplishments. It serves as a centralized hub for professional identity, networking,
+                    and personal branding, providing individuals with control over their online narrative. Beyond a
+                    static representation, it fosters continuous learning and serves as a powerful tool for career
+                    advancement, allowing for direct connections with potential collaborators and employers.
+                </p>
+
+                <a href="#">Visit Website</a>
+
+            </div>
+            <div class="project-image">
+                <img src="images/personal-website.png" alt="Personal Webiste Image" />
+            </div>
+        </div>
+        <div class="project reverse-layout">
+            <div class="project-image">
+                <img src="images/wiseadmit.png" alt="Personal Webiste Image" />
+            </div>
+            <div class="content">
+                <h4 class="subtitle">Wiseadmit</h4>
+                <p>
+                    WiseAdmit Technology, a global admission platform based in Canada, is ushering in a new era in the
+                    innovative method of studying abroad. We use AI-enabled matching technology to eliminate guesswork
+                    and wasted time and money from the admission process. By automating the workflow, we reduce
+                    processing time, allowing students and service providers to make informed decisions and receive
+                    faster service. We work on a global scale from China, Nepal, and Canada.
+                </p>
+                <a href="https://www.wiseadmit.io">Visit Website</a>
+            </div>
+        </div>
+    </section>
+    <!-- Projects Section End -->
+
+    <!-- Experience Section Start -->
+    <section id="experiences" class="wrapper">
+        <h4 class="section-title">Experiences</h4>
+        <div class="section-title-underline"></div>
+
+        <div class="experience">
+            <div class="left-content">
+                <div class="logo"><img src="images/rippey-logo.jpeg" alt="Rippey AI Logo"></div>
+                <div>
+                    <h6 class="company-title">Rippey AI</h6>
+                    <div class="position">Node Developer</div>
+                    <div class="chips">
+                        <div class="chip">
+                            Node.JS
+                        </div>
+                        <div class="chip">
+                            MongoDB
+                        </div>
+                        <div class="chip">
+                            Angular
+                        </div>
+                        <div class="chip">
+                            AWS
+                        </div>
+                        <div class="chip">
+                            MySQL
+                        </div>
+                        <div class="chip">
+                            Google Cloud
+                        </div>
+                        <div class="chip">
+                            React.JS
+                        </div>
+                        <div class="chip">
+                            Redux
+                        </div>
+                        <div class="chip">
+                            Jira
+                        </div>
+                        <div class="chip">
+                            Clickup
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-content">
+                <p>Colorado, United States</p>
+                <p class="timeline">Feb, 2022 (Ongoing)</p>
+            </div>
+        </div>
+
+        <div class="experience">
+            <div class="left-content">
+                <div class="logo"><img src="images/deerwalk.jpeg" alt="Deerwalk Logo"></div>
+                <div>
+                    <h6 class="company-title">Deerwalk Training Center</h6>
+                    <div class="position">Instructor | MERN Stack | Mobile App</div>
+                    <div class="chips">
+                        <div class="chip">
+                            MERN
+                        </div>
+                        <div class="chip">
+                            MongoDB
+                        </div>
+                        <div class="chip">
+                            Angular
+                        </div>
+                        <div class="chip">
+                            AWS
+                        </div>
+                        <div class="chip">
+                            Mobile App
+                        </div>
+                        <div class="chip">
+                            Google Cloud
+                        </div>
+                        <div class="chip">
+                            React.JS
+                        </div>
+                        <div class="chip">
+                            Redux
+                        </div>
+                        <div class="chip">
+                            Jira
+                        </div>
+                        <div class="chip">
+                            Clickup
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-content">
+                <p>Kathmandu, Nepal</p>
+                <p class="timeline">Aug 2018 - Feb, 2022</p>
+            </div>
+        </div>
+    </section>
+    <!-- Experince Section End -->
+
+    <!-- Education Section Start -->
+    <section id="educations" class="wrapper">
+        <h4 class="section-title">Education</h4>
+        <div class="section-title-underline"></div>
+
+        <div id="education-wrapper">
+            <div id="education-image"></div>
+
+            <div id="education-details">
+                <div class="education">
+                    <div class="left-content">
+                        <div class="logo"><img src="images/unh.jpeg" alt="UNH Logo">
+                        </div>
+                        <div>
+                            <h6 class="company-title">University of New Haven</h6>
+                            <div class="position">MS in Computer Science</div>
+                        </div>
+                    </div>
+                    <div class="right-content">
+                        <p>Connecticut, United States</p>
+                        <p class="timeline">August, 2022 (Ongoing)</p>
+                    </div>
+                </div>
+
+                <div class="education">
+                    <div class="left-content">
+                        <div class="logo"><img src="images/stlawrence.png" alt="St. Lawrence Logo"></div>
+                        <div>
+                            <h6 class="company-title">St Lawrence College</h6>
+                            <div class="position">Undergraduate, BSC CSIT</div>
+                        </div>
+                    </div>
+                    <div class="right-content">
+                        <p>Kathmandu, Nepal</p>
+                        <p class="timeline">Jan 2016 - May 2020</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- Education Section End -->
+
+    <!-- Blogs Section Start -->
+    <section id="blogs" class="wrapper">
+        <h4 class="section-title">Blogs</h4>
+        <div class="section-title-underline"></div>
+        <div id="blog-articles">
+            <article id="blog-article-1" class="blog-card">
+                <div class="blog-image">
+                    <img src="images/tech.jpeg" alt="Technology">
+                </div>
+                <div class="blog-content">
+                    <h6>Tech Market</h6>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat doloremque
+                        rem
+                        sapiente amet repellat non asperiores voluptatem
+                    <p>
+                        <a href="#">Read More</a>
+                </div>
+            </article>
+            <article id="blog-article-2" class="blog-card">
+                <div class="blog-image">
+                    <img src="images/neurology.jpeg" alt="Neurology">
+                </div>
+                <div class="blog-content">
+                    <h6>Discover Neural Flow</h6>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat doloremque
+                        rem
+                        sapiente amet repellat non asperiores voluptatem
+                    <p>
+                        <a href="#">Read More</a>
+                </div>
+            </article>
+            <article id="blog-article-3" class="blog-card">
+                <div class="blog-image">
+                    <img src="images/ai-vision.jpeg" alt="Ai VIsion">
+                </div>
+                <div class="blog-content">
+                    <h6>Revolutionary AI</h6>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat doloremque
+                        rem
+                        sapiente amet repellat non asperiores voluptatem
+                    <p>
+                        <a href="#">Read More</a>
+                </div>
+            </article>
+            <article id="blog-article-4" class="blog-card">
+                <div class="blog-image">
+                    <img src="images/design.jpeg" alt="Design">
+                </div>
+                <div class="blog-content">
+                    <h6>Perfect Design</h6>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat doloremque
+                        rem
+                        sapiente amet repellat non asperiores voluptatem
+                    <p>
+                        <a href="#">Read More</a>
+                </div>
+            </article>
+        </div>
+    </section>
+    <!-- Blogs Section End -->
+
+    <!-- Contact Section Start -->
+    <section id="contacts" class="wrapper">
+        <h4 class="section-title">Contact Me</h4>
+        <div class="section-title-underline"></div>
+        <form class="contact-form">
+            <h3>Say Something</h3>
+            <div class="form-fields">
+                <input type="text" placeholder="First Name" required id="form-firstName">
+                <input type="text" placeholder="Last Name" required id="form-lastName">
+                <input type="text" placeholder="Subject" required id="form-subject">
+                <input type="email" placeholder="Email" required id="form-email">
+                <textarea name="message" rows="4" placeholder="Your Message" id="form-message"></textarea>
+            </div>
+
+            <div class="button">
+                <button type="submit" class="primary-button">Send Message</button>
+            </div>
+        </form>
+    </section>
+    <!-- Contact Section End -->
+
+    <!-- Footer Section Start -->
+    <footer id="footer" class="wrapper">
+        <div class="socials">
+            <a href="https://www.facebook.com"><img src="images/Facebook_icon.png" alt="Facebook"></a>
+            <a href="https://www.linkedin.com"><img src="images/linkedin.png" alt="Linked In"></a>
+            <a href="https://www.github.com"><img src="images/github.svg" alt="Github"></a>
+            <a href="https://www.instagram.com"><img src="images/instagram.png" alt="Instagram"></a>
+        </div>
+        <div class="terms-policy">
+            <a href="">Terms of use</a> |
+            <a href="">Privacy Policy</a>
+        </div>
+        <div class="copyrights">
+            <p>@ 2024 All Rights Reserved, Sudip Thapa</p>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+</body>
+
+<script>
+    // Reference took from W3 School :  https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_topnav
+    function myFunction() {
+        var x = document.getElementById("navs");
+        if (x.className === "wrapper") {
+            x.className += " responsive";
+        } else {
+            x.className = "wrapper";
+        }
+    }
+</script>
+
+</html>
