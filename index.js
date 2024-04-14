@@ -69,6 +69,7 @@ client
           //       res.end(data);
           //     }
           //   );
+          res.writeHead(200, { "Content-Type": "application/json" });
           res.end(destinationData);
         } else {
           res.writeHead(404, { "Content-Type": "text/html" });
