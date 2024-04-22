@@ -25,19 +25,26 @@ client
       .createServer(async (req, res) => {
         res.setHeader("Access-Control-Allow-Origin", "*");
         res.setHeader(
-          "Access-Control-Allow-Methods",
-          "GET, POST, OPTIONS, PUT, PATCH, DELETE"
-        );
-        res.setHeader(
           "Access-Control-Allow-Headers",
           "Origin, X-Requested-With, Content-Type, Accept"
         );
+
         if (req.url === "/") {
           fs.readFile(
             path.join(__dirname, "public", "index.html"),
             "utf-8",
             (err, data) => {
               res.writeHead(200, { "Content-Type": "text/html" });
+              if (err) throw err;
+              res.end(data);
+            }
+          );
+        } else if (req.url === "/style.css") {
+          fs.readFile(
+            path.join(__dirname, "public", "style.css"),
+            "utf-8",
+            (err, data) => {
+              res.writeHead(200, { "Content-Type": "text/css" });
               if (err) throw err;
               res.end(data);
             }
